@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #293240;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 70px 50px 50px;
+    min-height: 650px;
+}
+
+.scoreboard {
+    border: 3px solid #FF2614;
+    max-width: 380px;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    &__user {
+        color: #000;
+        position: absolute;
+        width: 50px;
+        background-color: #fff;
+        height: 25px;
+        left: -25px;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__computer {
+        color: #000;
+        position: absolute;
+        width: 90px;
+        background-color: #fff;
+        height: 25px;
+        right: -50px;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.info {
+    color: #fff;
+    font-size: 2.4rem;
+    padding: 70px 0;
+}
+
+.selection {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+    &__radius {
+        border: 3px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        margin: 20px 20px;
+        cursor: pointer;
+        transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition-duration: .3s;
+        &--green {
+            border: 3px solid #43FF20;
+        }
+        &--red {
+            border: 3px solid #FF2614;
+        }
+        &--yellow {
+            border: 3px solid #FFEB12;
+        }
+    }
+}
+
+.move {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}

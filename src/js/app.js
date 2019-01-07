@@ -27,38 +27,17 @@ function game(e) {
 	if (userChoice === computerChoice) {
 		info.innerHTML = `${userChoice} equals ${computerChoice}. It's draw.`;
 		changeColor('yellow');
-	} else if (userChoice === 'rock' && computerChoice === 'paper') {
+	} else if (userChoice === 'rock' && computerChoice === 'paper' || userChoice === 'paper' && computerChoice === 'scissors' || userChoice === 'scissors' && computerChoice === 'rock') {
 		changeColor('red');
 		info.innerHTML = lose;
 		computerScore++;
 		scoreComputer.innerHTML = computerScore;
-	} else if (userChoice === 'paper' && computerChoice === 'scissors') {
-		info.innerHTML = lose;
-		computerScore++;
-		changeColor('red');
-		scoreComputer.innerHTML = computerScore;
-	} else if (userChoice === 'scissors' && computerChoice === 'rock') {
-		info.innerHTML = lose;
-		computerScore++;
-		changeColor('red');
-		scoreComputer.innerHTML = computerScore;
-	} else if (userChoice === 'rock' && computerChoice === 'scissors') {
-		info.innerHTML = win;
-		userScore++;
-		changeColor('green');
-		scoreUser.innerHTML = userScore;
-	} else if (userChoice === 'paper' && computerChoice === 'rock') {
-		info.innerHTML = win;
-		userScore++;
-		changeColor('green');
-		scoreUser.innerHTML = userScore;
-	} else if (userChoice === 'scissors' && computerChoice === 'paper') {
+	} else if (userChoice === 'rock' && computerChoice === 'scissors' || userChoice === 'paper' && computerChoice === 'rock' || userChoice === 'scissors' && computerChoice === 'paper') {
 		info.innerHTML = win;
 		userScore++;
 		changeColor('green');
 		scoreUser.innerHTML = userScore;
 	}
-
 }
 
 (function main() {

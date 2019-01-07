@@ -15,6 +15,7 @@ function computer() {
 function game(e) {
 	const userChoice = e;
 	const computerChoice = computer();
+	const resultChoice = userChoice + computerChoice;
 	let lose = `${userChoice} loses to ${computerChoice}. You lose.`;
 	let win = `${userChoice} beats ${computerChoice}. You win.`;
 	let changeColor = (color) => {
@@ -27,12 +28,12 @@ function game(e) {
 	if (userChoice === computerChoice) {
 		info.innerHTML = `${userChoice} equals ${computerChoice}. It's draw.`;
 		changeColor('yellow');
-	} else if (userChoice === 'rock' && computerChoice === 'paper' || userChoice === 'paper' && computerChoice === 'scissors' || userChoice === 'scissors' && computerChoice === 'rock') {
+	} else if (resultChoice === 'rockpaper' || resultChoice === 'paperscissors' || resultChoice === 'scissorsrock') {
 		changeColor('red');
 		info.innerHTML = lose;
 		computerScore++;
 		scoreComputer.innerHTML = computerScore;
-	} else if (userChoice === 'rock' && computerChoice === 'scissors' || userChoice === 'paper' && computerChoice === 'rock' || userChoice === 'scissors' && computerChoice === 'paper') {
+	} else if (resultChoice === 'rockscissors' || resultChoice === 'paperrock' || resultChoice === 'scissorspaper') {
 		info.innerHTML = win;
 		userScore++;
 		changeColor('green');
